@@ -14,6 +14,10 @@
             padding: 1em;
             background-color: #1e1e1e;
         }
+
+        .text-shadow {
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+        }
     </style>
 
     <script>
@@ -44,6 +48,7 @@
         <div style="display: inline-block;position:relative;">
             <img style="position: relative;" src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>
             <img style="position: absolute; top:-4px; left:-4px;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>
+            <div class="text-shadow" style="font-family:Arial,sans-serif;font-weight:bold;color:#FFFFFF;position: absolute; right:1px; bottom:-2px;">{{this.quantity}}</div>
         </div>
 
         {{/each}}
