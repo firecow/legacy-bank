@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <title>Legacy Bank</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+
+    <style>
+        body {
+            padding: 1em;
+            background-color: #1e1e1e;
+        }
+    </style>
+
+    <script>
+        function fetchData(callback) {
+            const files = ["CharacterProfile.csv"];
+            const promises = files.map((f) => $.get(f));
+            $.when.apply($, promises).done(function() {
+                const items = Papa.parse(arguments[0], {header: true}).data;
+                console.log(items);
+
+                const template = $('#datatable-template').html();
+                const templateScript = Handlebars.compile(template);
+                const html = templateScript({items: items});
+                $('#content').empty();
+                $('#content').append(html);
+
+                callback();
+            });
+        }
+        $( document ).ready(function() {
+            fetchData(() => { console.log('done') })
+        });
+    </script>
+
+    <script id="datatable-template" type="text/x-handlebars-template">
+        {{#each items}}
+
+        <div style="display: inline-block">
+            <img src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>
+            <img style="position: absolute;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>
+        </div>
+
+        {{/each}}
+    </script>
+
+</head>
+<body>
+<div id="content"></div>
+</body>
+</html>

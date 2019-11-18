@@ -1,0 +1,161 @@
+itemId,itemName,quantity,rarityColor,icon
+9088,"Gift of Arthas",5,#ffffff,inv_potion_28
+13457,"Greater Fire Protection Potion",5,#ffffff,inv_potion_24
+13452,"Elixir of the Mongoose",3,#ffffff,inv_potion_32
+12643,"Dense Weightstone",7,#ffffff,inv_stone_weightstone_05
+18641,"Dense Dynamite",9,#ffffff,inv_misc_bomb_06
+13442,"Mighty Rage Potion",4,#ffffff,inv_potion_41
+20452,"Smoked Desert Dumplings",16,#ffffff,inv_misc_food_64
+12404,"Dense Sharpening Stone",20,#ffffff,inv_stone_sharpeningstone_05
+12451,"Juju Power",17,#ffffff,inv_misc_monsterscales_11
+12460,"Juju Might",19,#ffffff,inv_misc_monsterscales_07
+16864,"Belt of Might",1,#ffa335,inv_belt_09
+19433,"Emberweave Leggings",1,#ffa335,inv_pants_mail_17
+16966,"Breastplate of Wrath",1,#ffa335,inv_chest_plate16
+22818,"The Plague Bearer",1,#ffa335,inv_shield_27
+19169,"Nightfall",1,#ffa335,inv_axe_12
+23226,"Ghoul Skin Tunic",1,#ffa335,inv_chest_leather_02
+19148,"Dark Iron Helm",1,#ffa335,inv_helmet_22
+2802,"Blazing Emblem",1,#ff0070,inv_jewelry_talisman_01
+11766,"Flameweave Cuffs of Stamina",1,#ff0070,inv_bracer_05
+13164,"Heart of the Scale",1,#ff0070,inv_misc_gem_bloodstone_01
+16965,"Sabatons of Wrath",1,#ffa335,inv_boots_plate_04
+19384,"Master Dragonslayer's Ring",1,#ffa335,inv_jewelry_ring_41
+16863,"Gauntlets of Might",1,#ffa335,inv_gauntlets_10
+18399,"Ocean's Breeze",1,#ff0070,inv_jewelry_ring_28
+21324,"Yellow Qiraji Resonating Crystal",1,#ff0070,inv_misc_qirajicrystal_01
+22714,"Sacrificial Gauntlets",1,#ff0070,inv_gauntlets_31
+21333,"Conqueror's Greaves",1,#ffa335,inv_boots_plate_05
+22936,"Wristguards of Vengeance",1,#ffa335,inv_bracer_17
+11122,"Carrot on a Stick",1,#ff1eff,inv_misc_food_54
+21639,"Pauldrons of the Unrelenting",1,#ffa335,inv_shoulder_29
+21460,"Helm of Domination",1,#ffa335,inv_helmet_09
+23000,"Plated Abomination Ribcage",1,#ffa335,inv_chest_chain_15
+22421,"Dreadnaught Gauntlets",1,#ffa335,inv_gauntlets_28
+21205,"Signet Ring of the Bronze Dragonflight",1,#ffa335,inv_jewelry_ring_40
+12602,"Draconian Deflector",1,#ff0070,inv_shield_20
+23044,"Harbinger of Doom",1,#ffa335,inv_knife_1h_stratholme_d_03
+21393,"Signet of Unyielding Strength",1,#ffa335,inv_jewelry_ring_ahnqiraj_03
+18813,"Ring of Binding",1,#ffa335,inv_jewelry_ring_13
+13965,"Blackhand's Breadth",1,#ff0070,inv_misc_armorkit_09
+14047,"Runecloth",1,#ffffff,inv_fabric_purplefire_01
+14530,"Heavy Runecloth Bandage",10,#ffffff,inv_misc_bandage_12
+6948,"Hearthstone",1,#ffffff,inv_misc_rune_01
+12384,"Cache of Mau'ari",1,#ffffff,inv_jewelry_necklace_09
+12798,"Annihilator",1,#ff0070,inv_axe_12
+18986,"Ultrasafe Transporter: Gadgetzan",1,#ff1eff,inv_misc_enggizmos_12
+18787,"Swift Gray Ram",1,#ffa335,ability_mount_mountainram
+15138,"Onyxia Scale Cloak",1,#ff0070,inv_misc_cape_05
+21394,"Drape of Unyielding Strength",1,#ffa335,inv_misc_cape_20
+10518,"Parachute Cloak",1,#ff1eff,inv_misc_cape_11
+11145,"Runed Truesilver Rod",1,#ffffff,inv_staff_11
+16309,"Drakefire Amulet",1,#ff0070,inv_jewelry_talisman_11
+22420,"Dreadnaught Sabatons",1,#ffa335,inv_boots_plate_06
+12640,"Lionheart Helm",1,#ffa335,inv_helmet_36
+16207,"Runed Arcanite Rod",1,#ffffff,inv_wand_09
+11285,"Jagged Arrow",70,#ffffff,inv_weapon_shortblade_25
+21601,"Ring of Emperor Vek'lor",1,#ffa335,inv_jewelry_ring_ahnqiraj_01
+23071,"Leggings of Apocalypse",1,#ffa335,inv_pants_leather_09
+6893,"Workshop Key",1,#ffffff,inv_misc_key_06
+7146,"The Scarlet Key",1,#ff1eff,inv_misc_key_01
+11000,"Shadowforge Key",1,#ffffff,inv_misc_key_08
+11078,"Relic Coffer Key",3,#ffffff,inv_misc_key_03
+13704,"Skeleton Key",1,#ffffff,inv_misc_key_11
+18249,"Crescent Key",1,#ffffff,inv_misc_key_10
+12382,"Key to the City",1,#ff1eff,inv_misc_key_13
+18250,"Gordok Shackle Key",1,#ff1eff,inv_misc_key_11
+21761,"Scarab Coffer Key",1,#ffffff,inv_misc_key_08
+16204,"Illusion Dust",20,#ffffff,inv_enchant_dustillusion
+23221,"Misplaced Servo Arm",1,#ffa335,inv_mace_28
+20769,"Disgusting Oozeling",1,#ffffff,ability_creature_poison_05
+10498,"Gyromatic Micro-Adjustor",1,#ffffff,inv_misc_screwdriver_02
+13377,"Miniature Cannon Balls",107,#ff0070,inv_ammo_bullet_02
+13377,"Miniature Cannon Balls",200,#ff0070,inv_ammo_bullet_02
+16203,"Greater Eternal Essence",6,#ff1eff,inv_enchant_essenceeternallarge
+22804,"Maexxna's Fang",1,#ffa335,inv_knife_1h_stratholme_d_01
+13544,"Spectral Essence",1,#ff1eff,inv_misc_orb_05
+5956,"Blacksmith Hammer",1,#ffffff,inv_hammer_20
+11020,"Evergreen Pouch",1,#ffffff,inv_misc_bag_18
+19948,"Zandalarian Hero Badge",1,#ffa335,inv_jewelry_necklace_13
+14343,"Small Brilliant Shard",17,#ff0070,inv_enchant_shardbrilliantsmall
+21151,"Rumsey Rum Black Label",10,#ffffff,inv_drink_04
+12065,"Ward of the Elements",1,#ff1eff,inv_jewelry_talisman_02
+17333,"Aqual Quintessence",1,#ffffff,inv_potion_76
+6219,"Arclight Spanner",1,#ffffff,inv_misc_wrench_01
+10398,"Mechanical Chicken",1,#ffffff,spell_magic_polymorphchicken
+14344,"Large Brilliant Shard",20,#ff0070,inv_enchant_shardbrilliantlarge
+20725,"Nexus Crystal",13,#ffa335,inv_enchant_shardnexuslarge
+20402,"Agent of Nozdormu",1,#ff1eff,ability_creature_cursed_01
+22754,"Eternal Quintessence",1,#ffffff,inv_potion_83
+12451,"Juju Power",6,#ffffff,inv_misc_monsterscales_11
+13347,"Crystal of Zin-Malor",1,#ff1eff,inv_misc_orb_02
+11669,"Naglering",1,#ff0070,inv_jewelry_ring_05
+11951,"Whipper Root Tuber",6,#ffffff,inv_misc_food_55
+12457,"Juju Chill",16,#ffffff,inv_misc_monsterscales_09
+19858,"Zandalar Honor Token",2,#ff1eff,inv_misc_coin_08
+19431,"Styleen's Impeding Scarab",1,#ffa335,inv_misc_armorkit_10
+11563,"Crystal Force",2,#ffffff,inv_misc_gem_crystal_02
+12455,"Juju Ember",15,#ffffff,inv_misc_monsterscales_15
+17066,"Drillborer Disk",1,#ffa335,inv_shield_10
+16865,"Breastplate of Might",1,#ffa335,inv_chest_plate16
+19577,"Rage of Mugamba",1,#ffa335,inv_jewelry_necklace_26
+22422,"Dreadnaught Waistguard",1,#ffa335,inv_belt_27
+12460,"Juju Might",6,#ffffff,inv_misc_monsterscales_07
+18262,"Elemental Sharpening Stone",1,#ff1eff,inv_stone_02
+13180,"Stratholme Holy Water",36,#ffffff,inv_potion_75
+13180,"Stratholme Holy Water",50,#ffffff,inv_potion_75
+19376,"Archimtiros' Ring of Reckoning",1,#ffa335,inv_jewelry_ring_40
+22764,"Ironvine Belt",1,#ff0070,inv_belt_21
+21456,"Sandstorm Cloak",1,#ffa335,inv_misc_cape_06
+11810,"Force of Will",1,#ff0070,inv_jewelry_amulet_01
+17734,"Helm of the Mountain",1,#ff0070,inv_helmet_20
+21323,"Green Qiraji Resonating Crystal",1,#ff0070,inv_misc_qirajicrystal_03
+18466,"Royal Seal of Eldre'Thalas",1,#ff0070,inv_jewelry_talisman_10
+21383,"Winterfall Spirit Beads",36,#ffffff,inv_jewelry_amulet_05
+16962,"Legplates of Wrath",1,#ffa335,inv_pants_04
+20886,"Qiraji Spiked Hilt",1,#ffa335,inv_qiraj_hiltspiked
+17065,"Medallion of Steadfast Might",1,#ffa335,inv_jewelry_amulet_03
+11976,"Sardonyx Knuckle of Nature Resistance",1,#ff1eff,inv_jewelry_ring_04
+16959,"Bracelets of Wrath",1,#ffa335,inv_bracer_19
+19947,"Nat Pagle's Broken Reel",1,#ff0070,inv_gizmo_09
+13209,"Seal of the Dawn",1,#ff0070,inv_misc_armorkit_18
+22762,"Ironvine Breastplate",1,#ff0070,inv_chest_plate07
+9492,"Electromagnetic Gigaflux Reactivator",1,#ff0070,inv_gizmo_01
+16867,"Legplates of Might",1,#ffa335,inv_pants_04
+16866,"Helm of Might",1,#ffa335,inv_helmet_09
+19822,"Zandalar Vindicator's Breastplate",1,#ffa335,inv_chest_plate07
+19823,"Zandalar Vindicator's Belt",1,#ffa335,inv_belt_32
+19824,"Zandalar Vindicator's Armguards",1,#ffa335,inv_bracer_14
+17191,"Scepter of Celebras",1,#ff0070,inv_staff_16
+10818,"Yeh'kinya's Scroll",1,#ffffff,inv_scroll_02
+10761,"Coldrage Dagger",1,#ff0070,inv_sword_34
+16960,"Waistband of Wrath",1,#ffa335,inv_belt_09
+9240,"Mallet of Zul'Farrak",1,#ff1eff,inv_hammer_19
+16963,"Helm of Wrath",1,#ffa335,inv_helmet_71
+18823,"Aged Core Leather Gloves",1,#ffa335,inv_gauntlets_23
+20130,"Diamond Flask",1,#ff0070,inv_drink_01
+22707,"Ramaladni's Icy Grasp",1,#ffa335,inv_jewelry_ring_35
+22660,"Gaea's Embrace",1,#ff0070,inv_misc_cape_17
+17744,"Heart of Noxxion",1,#ff0070,inv_misc_gem_pearl_06
+23033,"Icy Scale Coif",1,#ffa335,inv_helmet_20
+22702,"Icy Scale Leggings",1,#ffa335,inv_pants_mail_15
+21691,"Ooze-ridden Gauntlets",1,#ffa335,inv_gauntlets_11
+19364,"Ashkandi, Greatsword of the Brotherhood",1,#ffa335,inv_sword_50
+22940,"Icebane Pauldrons",1,#ffa335,inv_shoulder_16
+18343,"Petrified Band",1,#ff1eff,inv_jewelry_ring_14
+17744,"Heart of Noxxion",1,#ff0070,inv_misc_gem_pearl_06
+13952,"Iceblade Hacker",1,#ff0070,inv_axe_03
+23024,"Prepared Field Duty Papers",1,#ffffff,inv_misc_note_02
+20801,"Cenarion Tactical Badge",10,#ff1eff,inv_jewelry_amulet_02
+21167,"Tactical Task Briefing VIII",1,#ff1eff,inv_scroll_03
+20947,"Tactical Task Briefing IV",1,#ff1eff,inv_scroll_03
+20806,"Logistics Task Briefing X",1,#ff1eff,inv_scroll_03
+23028,"Hailstone Band",1,#ffa335,inv_jewelry_ring_35
+21133,"Followup Tactical Assignment",1,#ffffff,inv_letter_04
+6339,"Runed Silver Rod",1,#ffffff,inv_staff_01
+11130,"Runed Golden Rod",1,#ffffff,inv_staff_10
+21708,"Beetle Scaled Wristguards",1,#ffa335,inv_bracer_12
+20943,"Tactical Task Briefing X",1,#ff1eff,inv_scroll_03
+6218,"Runed Copper Rod",1,#ffffff,inv_staff_goldfeathered_01
+21166,"Tactical Task Briefing VII",1,#ff1eff,inv_scroll_03
+20944,"Tactical Task Briefing IX",1,#ff1eff,inv_scroll_03
