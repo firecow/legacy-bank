@@ -41,9 +41,9 @@
     <script id="datatable-template" type="text/x-handlebars-template">
         {{#each items}}
 
-        <div style="display: inline-block">
-            <img src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>
-            <img style="position: absolute;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>
+        <div style="display: inline-block;position:relative;">
+            <img style="position: relative;" src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>
+            <img style="position: absolute; top:-4px; left:-4px;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>
         </div>
 
         {{/each}}
