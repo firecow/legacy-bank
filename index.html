@@ -3,9 +3,12 @@
     <title>Legacy Bank</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.semanticui.min.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.semanticui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
 
@@ -38,24 +41,56 @@
             });
         }
         $( document ).ready(function() {
-            fetchData(() => { console.log('done') })
+            fetchData(() => {
+                $('.datatable').DataTable({
+                    "autoWidth": true,
+                    "paging": false,
+                    "ordering": false,
+                    "info": false,
+                    "columnDefs": [
+                        { "width": "100%", "targets": 1 }
+                    ]
+                });
+            });
         });
     </script>
 
     <script id="datatable-template" type="text/x-handlebars-template">
-        {{#each items}}
+        <table class="ui celled table small datatable">
+            <thead style="text-align: left;">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each items}}
+            <tr>
+                <td><img style="position: relative;width:12px;" src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/></td>
+                <td>{{this.itemName}}</td>
+                <td style="text-align: center;">{{this.quantity}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+<!--        {{#each items}}-->
 
-        <div style="display: inline-block;position:relative;">
-            <img style="position: relative;" src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>
-            <img style="position: absolute; top:-4px; left:-4px;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>
-            <div class="text-shadow" style="font-family:Arial,sans-serif;font-weight:bold;color:#FFFFFF;position: absolute; right:1px; bottom:-2px;">{{this.quantity}}</div>
-        </div>
+<!--        <div style="display: inline-block;position:relative;">-->
+<!--            <img style="position: relative;" src="https://wow.zamimg.com/images/wow/icons/medium/{{this.icon}}.jpg" alt="{{this.itemName}}"/>-->
+<!--            <img style="position: absolute; top:-4px; left:-4px;" src="https://wow.zamimg.com/images/Icon/medium/border/default.png" alt="Default Border"/>-->
+<!--            <div class="text-shadow" style="font-family:Arial,sans-serif;font-weight:bold;color:#FFFFFF;position: absolute; right:1px; bottom:-2px;">{{this.quantity}}</div>-->
+<!--        </div>-->
 
-        {{/each}}
+<!--        {{/each}}-->
+
     </script>
 
 </head>
 <body>
+
+
+
 <div id="content"></div>
 </body>
 </html>
