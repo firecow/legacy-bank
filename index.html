@@ -52,19 +52,17 @@
                     invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag6.Contents') || []));
 
                     for (let [contentIndex, contentEntry] of invEntries) {
-                        const itemId = contentEntry["Item"].replace(/:.*:.*:.*/g, '');
                         const itemName = contentEntry["Name"];
                         const quantity = contentEntry["Quantity"];
                         const color = '#' + contentEntry["Color"].substr(0, 6);
                         const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
-                        itemMap.set(itemId, itemMap.get(itemId) || {
-                            itemId,
+                        itemMap.set(itemName, itemMap.get(itemName) || {
                             itemName,
                             quantity,
                             color,
                             icon
                         });
-                        itemMap.get(itemId).quantity += quantity;
+                        itemMap.get(itemName).quantity += quantity;
                     }
 
                     let bankEntires = [];
@@ -80,19 +78,38 @@
                     bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag9.Contents') || []));
 
                     for (let [contentIndex, contentEntry] of bankEntires) {
-                        const itemId = contentEntry["Item"].replace(/:.*:.*:.*/g, '');
                         const itemName = contentEntry["Name"];
                         const quantity = contentEntry["Quantity"];
                         const color = '#' + contentEntry["Color"].substr(0, 6);
                         const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
-                        itemMap.set(itemId, itemMap.get(itemId) || {
-                            itemId,
+                        itemMap.set(itemName, itemMap.get(itemName) || {
                             itemName,
                             quantity,
                             color,
                             icon
                         });
-                        itemMap.get(itemId).quantity += quantity;
+                        itemMap.get(itemName).quantity += quantity;
+                    }
+
+
+                    const mailBox = Object.entries(objp.get(charEntries, 'MailBox') || []);
+                    for (let i = 0; i < mailBox.length; i++) {
+                        const mailBoxEntry = mailBox[i];
+                        const mailBoxContentEntry = objp.get(mailBoxEntry, '1.Item');
+                        if (mailBoxContentEntry == null) {
+                            continue;
+                        }
+                        const itemName = mailBoxContentEntry["Name"];
+                        const quantity = mailBoxContentEntry["Quantity"];
+                        const color = '#' + mailBoxContentEntry["Color"].substr(0, 6);
+                        const icon = mailBoxContentEntry["Icon"].replace('Interface\\Icons\\', '').toLowerCase();
+                        itemMap.set(itemName, itemMap.get(itemName) || {
+                            itemName,
+                            quantity,
+                            color,
+                            icon
+                        });
+                        itemMap.get(itemName).quantity += quantity;
                     }
                 }
             }
