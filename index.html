@@ -11,6 +11,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.semanticui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    <script src="object-path.js"></script>
 
     <style>
         body {
@@ -24,12 +25,87 @@
     </style>
 
     <script>
+        function luaToJson(text) {
+            const objp = window.objectPath;
+            const str = text
+                .replace(/\[(.*)\]\s\=\s/g,'$1:')     // change equal to colon & remove outer brackets
+                .replace(/[\t\r\n]/g,'')              // remove tabs & returns
+                .replace(/\}\,\s--\s\[\d+\]\}/g,']]') // replace sets ending with a comment with square brackets
+                .replace(/\,\s--\s\[\d+\]/g,',')      // remove close subgroup and comment
+                .replace(/,(\}|\])/g,'$1')            // remove trailing comma
+                .replace(/\}\,\{/g,'],[')             // replace curly bracket set with square brackets
+                .replace(/\{\{/g,'[[')                // change double curlies to square brackets
+                .replace(/(\d{1,}):\{/g,'"$1":{')
+                .replace(/[A-Za-z]*? = \{[\s\S]*?\}myProfile = /g, '');   // remove top level assignments
+
+
+            const realmMap = JSON.parse(str);
+            const itemMap = new Map();
+            for (let [realmName, char] of Object.entries(realmMap)) {
+                for (let [charName, charEntries] of Object.entries(char)) {
+
+                    let invEntries = [];
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag1.Contents') || []));
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag2.Contents') || []));
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag3.Contents') || []));
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag4.Contents') || []));
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag5.Contents') || []));
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag6.Contents') || []));
+
+                    for (let [contentIndex, contentEntry] of invEntries) {
+                        const itemId = contentEntry["Item"].replace(/:.*:.*:.*/g, '');
+                        const itemName = contentEntry["Name"];
+                        const quantity = contentEntry["Quantity"];
+                        const color = '#' + contentEntry["Color"].substr(0, 6);
+                        const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
+                        itemMap.set(itemId, itemMap.get(itemId) || {
+                            itemId,
+                            itemName,
+                            quantity,
+                            color,
+                            icon
+                        });
+                        itemMap.get(itemId).quantity += quantity;
+                    }
+
+                    let bankEntires = [];
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag1.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag2.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag3.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag4.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag5.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag6.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag7.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag8.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag9.Contents') || []));
+
+                    for (let [contentIndex, contentEntry] of bankEntires) {
+                        const itemId = contentEntry["Item"].replace(/:.*:.*:.*/g, '');
+                        const itemName = contentEntry["Name"];
+                        const quantity = contentEntry["Quantity"];
+                        const color = '#' + contentEntry["Color"].substr(0, 6);
+                        const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
+                        itemMap.set(itemId, itemMap.get(itemId) || {
+                            itemId,
+                            itemName,
+                            quantity,
+                            color,
+                            icon
+                        });
+                        itemMap.get(itemId).quantity += quantity;
+                    }
+                }
+            }
+            return itemMap;
+        }
+
         function fetchData(callback) {
-            const files = ["CharacterProfile.csv"];
+            const files = ["CharacterProfiler.lua"];
             const promises = files.map((f) => $.get(f));
             $.when.apply($, promises).done(function() {
-                const items = Papa.parse(arguments[0], {header: true}).data;
-                console.log(items);
+                //const items = Papa.parse(arguments[0], {header: true}).data;
+                const items = Array.from(luaToJson(arguments[0]).values());
 
                 const template = $('#datatable-template').html();
                 const templateScript = Handlebars.compile(template);
@@ -45,7 +121,7 @@
                 $('.datatable').DataTable({
                     "autoWidth": true,
                     "paging": false,
-                    "ordering": false,
+                    "ordering": true,
                     "info": false,
                     "columnDefs": [
                         { "width": "100%", "targets": 1 }
