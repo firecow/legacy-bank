@@ -103,13 +103,19 @@
                         const quantity = mailBoxContentEntry["Quantity"];
                         const color = '#' + mailBoxContentEntry["Color"].substr(0, 6);
                         const icon = mailBoxContentEntry["Icon"].replace('Interface\\Icons\\', '').toLowerCase();
-                        itemMap.set(itemName, itemMap.get(itemName) || {
-                            itemName,
-                            quantity,
-                            color,
-                            icon
-                        });
-                        itemMap.get(itemName).quantity += quantity;
+
+                        let item = itemMap.get(itemName);
+                        if (item == null) {
+                            item =  {
+                                itemName,
+                                quantity,
+                                color,
+                                icon
+                            };
+                            itemMap.set(itemName,item);
+                        } else {
+                            item.quantity += quantity;
+                        }
                     }
                 }
             }
