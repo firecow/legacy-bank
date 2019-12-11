@@ -56,13 +56,18 @@
                         const quantity = contentEntry["Quantity"];
                         const color = '#' + contentEntry["Color"].substr(0, 6);
                         const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
-                        itemMap.set(itemName, itemMap.get(itemName) || {
-                            itemName,
-                            quantity,
-                            color,
-                            icon
-                        });
-                        itemMap.get(itemName).quantity += quantity;
+                        let item = itemMap.get(itemName);
+                        if (item == null) {
+                            item =  {
+                                itemName,
+                                quantity,
+                                color,
+                                icon
+                            };
+                            itemMap.set(itemName,item);
+                        } else {
+                            item.quantity += quantity;
+                        }
                     }
 
                     let bankEntires = [];
@@ -82,13 +87,18 @@
                         const quantity = contentEntry["Quantity"];
                         const color = '#' + contentEntry["Color"].substr(0, 6);
                         const icon = contentEntry["Texture"].replace('Interface\\Icons\\', '').toLowerCase();
-                        itemMap.set(itemName, itemMap.get(itemName) || {
-                            itemName,
-                            quantity,
-                            color,
-                            icon
-                        });
-                        itemMap.get(itemName).quantity += quantity;
+                        let item = itemMap.get(itemName);
+                        if (item == null) {
+                            item =  {
+                                itemName,
+                                quantity,
+                                color,
+                                icon
+                            };
+                            itemMap.set(itemName,item);
+                        } else {
+                            item.quantity += quantity;
+                        }
                     }
 
 
