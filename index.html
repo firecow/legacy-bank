@@ -106,12 +106,15 @@
                     for (let i = 0; i < mailBox.length; i++) {
                         const mailBoxEntry = mailBox[i];
                         const mailBoxContentEntry = objp.get(mailBoxEntry, '1.Item');
-                        if (mailBoxContentEntry == null) {
+                        if (mailBoxContentEntry == null || mailBoxContentEntry["Name"] == null) {
                             continue;
                         }
                         const itemName = mailBoxContentEntry["Name"];
                         const quantity = mailBoxContentEntry["Quantity"];
-                        const color = '#' + mailBoxContentEntry["Color"].substr(0, 6);
+                        let color = 'ffffffff';
+                        if (mailBoxContentEntry["Color"]) {
+                            color = '#' + mailBoxContentEntry["Color"].substr(0, 6);
+                        }
                         const icon = mailBoxContentEntry["Icon"].replace('Interface\\Icons\\', '').toLowerCase();
 
                         let item = itemMap.get(itemName);
