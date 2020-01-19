@@ -44,6 +44,7 @@
                 for (let [charName, charEntries] of Object.entries(char)) {
 
                     let invEntries = [];
+                    invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag0.Contents') || []));
                     invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag1.Contents') || []));
                     invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag2.Contents') || []));
                     invEntries = invEntries.concat(Object.entries(objp.get(charEntries, 'Inventory.Bag3.Contents') || []));
@@ -72,6 +73,7 @@
 
                     let bankEntires = [];
                     bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Contents') || []));
+                    bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag0.Contents') || []));
                     bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag1.Contents') || []));
                     bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag2.Contents') || []));
                     bankEntires = bankEntires.concat(Object.entries(objp.get(charEntries, 'Bank.Bag3.Contents') || []));
